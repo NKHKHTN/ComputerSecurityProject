@@ -277,7 +277,7 @@ data/
 
 ## **5. CHỨC NĂNG ĐÃ THỰC HIỆN**
 
-### ✅ 5.1 Đăng ký tài khoản
+### 5.1 Đăng ký tài khoản
 - **Giao diện**: Form đăng ký với validation
 - **Dữ liệu**: Email, họ tên, ngày sinh, SĐT, địa chỉ, passphrase
 - **Bảo mật**: 
@@ -286,7 +286,7 @@ data/
   - SHA-256 hash với random salt
 - **Kết quả**: Lưu vào SQLite database với role 'user' mặc định
 
-### ✅ 5.2 Đăng nhập & MFA
+### 5.2 Đăng nhập & MFA
 - **Xác thực**: Email + passphrase hash verification
 - **MFA**: TOTP code từ Google Authenticator
 - **Bảo mật**: 
@@ -295,18 +295,18 @@ data/
   - Session management an toàn
 - **Logging**: Ghi log tất cả hoạt động authentication
 
-### ✅ 5.3 Quản lý khóa RSA
+### 5.3 Quản lý khóa RSA
 - **Tạo khóa**: RSA-2048 bit với thời hạn 90 ngày
 - **Lưu trữ**: Private key mã hóa AES-GCM, public key PEM
 - **Quản lý**: Kiểm tra hết hạn, gia hạn, tạo mới
 - **Xuất khóa**: Export PEM format và QR code
 
-### ✅ 5.4 QR Code Public Key
+### 5.4 QR Code Public Key
 - **Tạo QR**: Chứa email, ngày tạo, public key (base64)
 - **Đọc QR**: Scan từ file ảnh hoặc camera
 - **Chia sẻ**: Chia sẻ public key an toàn qua QR
 
-### ✅ 5.5 Cập nhật tài khoản
+### 5.5 Cập nhật tài khoản
 - **Profile**: Sửa thông tin cá nhân (tên, ngày sinh, SĐT, địa chỉ)
 - **Đổi passphrase**: 
   - Xác thực passphrase cũ
@@ -314,26 +314,26 @@ data/
   - Mã hóa lại private key với passphrase mới
 - **MFA**: Bật/tắt TOTP authentication
 
-### ✅ 5.6 Mã hóa tệp tin
+### 5.6 Mã hóa tệp tin
 - **Hybrid**: AES-256-GCM + RSA-2048
 - **Metadata**: Thông tin người gửi, tên file, timestamp
 - **Định dạng**: 
   - Combined: File .enc chứa tất cả
   - Separate: File .enc + file .key riêng biệt
 
-### ✅ 5.7 Giải mã tệp tin
+### 5.7 Giải mã tệp tin
 - **Tự động**: Nhận diện định dạng file mã hóa
 - **Xác thực**: Yêu cầu passphrase để giải mã private key
 - **Khôi phục**: Giải mã thành công trả về file gốc
 - **Kiểm tra**: Integrity verification với GCM tag
 
-### ✅ 5.8 Ký số tệp tin
+### 5.8 Ký số tệp tin
 - **Thuật toán**: RSA-PSS + SHA-256
 - **Output**: File .sig chứa chữ ký số
 - **Audit**: Ghi log vào signature_log.json
 - **Metadata**: Thông tin người ký, thời gian, file hash
 
-### ✅ 5.9 Xác minh chữ ký
+### 5.9 Xác minh chữ ký
 - **Input**: File gốc + file .sig
 - **Verification**: Kiểm tra với public key
 - **Kết quả**: 
@@ -341,7 +341,7 @@ data/
   - Không hợp lệ: Cảnh báo bị thay đổi
 - **Logging**: Ghi log tất cả hoạt động verification
 
-### ✅ 5.10 Phân quyền tài khoản
+### 5.10 Phân quyền tài khoản
 - **Roles**: 'user' và 'admin'
 - **Admin functions**:
   - Xem danh sách users
@@ -350,37 +350,37 @@ data/
   - Xem system logs
 - **UI**: Admin dashboard riêng biệt
 
-### ✅ 5.11 Ghi log bảo mật
+### 5.11 Ghi log bảo mật
 - **File**: `data/logs/security.log`
 - **Format**: Timestamp, Email, Action, Status
 - **Events**: Login, key generation, encryption, signing, admin actions
 - **Audit**: `signature_log.json` cho digital signatures
 
-### ✅ 5.13 Kiểm tra trạng thái khóa
+### 5.13 Kiểm tra trạng thái khóa
 - **Thông tin**: Ngày tạo, hết hạn, trạng thái
 - **Cảnh báo**: Thông báo gần hết hạn
 - **Action**: Gia hạn hoặc tạo khóa mới
 - **UI**: Giao diện trực quan cho key management
 
-### ✅ 5.14 Tìm kiếm public key
+### 5.14 Tìm kiếm public key
 - **Search**: Tìm theo email address
 - **Display**: Hiển thị public key, QR code, thông tin khóa
 - **Import**: Nhập public key của users khác
 - **Status**: Kiểm tra tính hợp lệ và hết hạn
 
-### ✅ 5.15 Giới hạn đăng nhập
+### 5.15 Giới hạn đăng nhập
 - **Limit**: 5 lần đăng nhập sai
 - **Lockout**: Progressive lockout (15min, 30min, 1hr, 2hr, 4hr)
 - **Tracking**: Đếm fail_count trong database
 - **Auto-unlock**: Tự động mở khóa khi hết thời gian
 
-### ✅ 5.16 Tùy chọn định dạng file
+### 5.16 Tùy chọn định dạng file
 - **Combined**: Tất cả trong 1 file .enc
 - **Separate**: File .enc + file .key riêng
 - **Auto-detect**: Tự động nhận diện khi giải mã
 - **Metadata**: Thông tin format trong file header
 
-### ✅ 5.17 Khôi phục tài khoản
+### 5.17 Khôi phục tài khoản
 - **Recovery Code**: Tạo khi đăng ký (chỉ hiển thị 1 lần)
 - **Process**: Nhập recovery code → đổi passphrase mới
 - **Security**: Recovery code hash trong database
@@ -588,11 +588,11 @@ Link to Demo Video on [OneDrive](https://studenthcmusedu-my.sharepoint.com/:v:/g
 ## **11. KẾT LUẬN**
 
 ### 11.1 Thành tựu đạt được
-- ✅ **Hoàn thành ~94%** các yêu cầu bắt buộc (16/17 chức năng)
-- ✅ **Bảo mật cao** với industry-standard algorithms
-- ✅ **Giao diện thân thiện** với Tkinter GUI
-- ✅ **Kiến trúc rõ ràng** và dễ maintain
-- ✅ **Documentation đầy đủ** và chi tiết
+- **Hoàn thành ~94%** các yêu cầu bắt buộc (16/17 chức năng)
+- **Bảo mật cao** với industry-standard algorithms
+- **Giao diện thân thiện** với Tkinter GUI
+- **Kiến trúc rõ ràng** và dễ maintain
+- **Documentation đầy đủ** và chi tiết
 
 ### 11.2 Điểm nổi bật
 - **Hybrid Encryption**: Kết hợp AES + RSA hiệu quả
@@ -637,8 +637,8 @@ Link to Demo Video on [OneDrive](https://studenthcmusedu-my.sharepoint.com/:v:/g
 
 ---
 
-**📝 Ghi chú**: Báo cáo này được tạo ngày 15/7/2025 cho đồ án An ninh máy tính 1. Toàn bộ source code và documentation có sẵn tại [GitHub Repository](https://github.com/Burncake/ComputerSecurityProject).
+**Ghi chu**: Bao cao nay duoc tao ngay 15/7/2025 cho do an An ninh may tinh 1. Toan bo source code va documentation co san tai [GitHub Repository](https://github.com/Burncake/ComputerSecurityProject).
 
 ---
 
-**🔒 Cảnh báo Bảo mật**: Ứng dụng này xử lý dữ liệu nhạy cảm và keys mã hóa. Luôn chạy trên hệ thống tin cậy và cập nhật thường xuyên. Đối với sử dụng production, cần thực hiện đánh giá bảo mật và penetration testing đầy đủ.
+**Canh bao Bao mat**: Ung dung nay xu ly du lieu nhay cam va keys ma hoa. Luon chay tren he thong tin cay va cap nhat thuong xuyen. Doi voi su dung production, can thuc hien danh gia bao mat va penetration testing day du.

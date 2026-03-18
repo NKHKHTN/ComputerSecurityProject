@@ -2,11 +2,11 @@
 
 A comprehensive desktop cryptography application built with Python and Tkinter, implementing modern security practices for user authentication, key management, file encryption, and digital signatures.
 
-## 🔐 Project Overview
+## Project Overview
 
 This project is a **complete cryptographic security system** that demonstrates real-world security implementations including:
 
-### Core Features ✅ **IMPLEMENTED**
+### Core Features **IMPLEMENTED**
 * **User Authentication System** - Secure registration and login with SHA256 hashing
 * **RSA Key Management** - 2048-bit key generation with AES-256-GCM encryption
 * **File Encryption/Decryption** - Hybrid AES+RSA encryption for secure file storage
@@ -21,7 +21,7 @@ This project is a **complete cryptographic security system** that demonstrates r
 * **Role-Based Access Control** - User and admin privilege separation
 * **Secure File Storage** - Encrypted private key storage with passphrase protection
 
-## 🏗️ Architecture & Technology Stack
+## Architecture & Technology Stack
 
 ### Core Technologies
 - **Python 3.12+** - Main application language
@@ -84,7 +84,7 @@ user_roles: email, role [user|admin]
 account_lock: email, locked [0|1]
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ComputerSecurityProject/
@@ -131,7 +131,7 @@ ComputerSecurityProject/
         └── signature_log.json      # Digital signature audit trail
 ```
 
-## 🛡️ Security Features Deep Dive
+## Security Features Deep Dive
 
 ### User Authentication System
 - **Password Security**: SHA256 hashed + random salt
@@ -273,7 +273,7 @@ python main.py
 - **System Monitoring**: View active users and security logs
 - **Audit Trail**: Access comprehensive logging of all security events
 
-## 🔒 Security Best Practices
+## Security Best Practices
 
 ### For Users
 - **Strong Passphrases**: Use minimum 8 characters with mixed case, numbers, and symbols
@@ -296,7 +296,7 @@ python main.py
 - **Session Timeout**: Automatic session expiration after inactivity
 - **Audit Trail**: Comprehensive logging for security monitoring
 
-## 🧪 Testing & Validation
+## Testing & Validation
 
 ### Cryptographic Testing
 ```bash
@@ -366,7 +366,7 @@ pip install -r requirements.txt
 4. Ensure all tests pass
 5. Submit pull request with detailed description
 
-## 📄 License & Legal
+## License & Legal
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -377,7 +377,7 @@ If you discover a security vulnerability, please report it privately to the main
 ### Educational Purpose
 This project is designed for educational and research purposes. While it implements industry-standard cryptographic practices, please conduct thorough security assessments before using in production environments.
 
-## 👥 Authors & Acknowledgments
+## Authors & Acknowledgments
 
 ### Development Team
 - **22127021** - Phan Thế Anh
@@ -404,4 +404,4 @@ This project is designed for educational and research purposes. While it impleme
 
 ---
 
-**⚠️ Security Notice**: This application handles cryptographic keys and sensitive data. Always run on trusted systems and keep your software updated. For production use, conduct thorough security audits and penetration testing.
+**Security Notice**: This application handles cryptographic keys and sensitive data. Always run on trusted systems and keep your software updated. For production use, conduct thorough security audits and penetration testing.
