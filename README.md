@@ -164,7 +164,7 @@ ComputerSecurityProject/
 - **System Monitoring**: Real-time user activity and key status tracking
 - **Audit Logging**: Comprehensive security event logging
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### Prerequisites
 - **Python 3.12+** (3.12.10 recommended)
@@ -224,7 +224,7 @@ python main.py
 3. **Key Generation**: Create your first RSA key pair during registration or afterward
 4. **MFA Setup**: Optionally enable TOTP multi-factor authentication
 
-## 📖 User Guide
+## User Guide
 
 ### Getting Started
 1. **Registration**: Create a new account with email and secure passphrase
@@ -327,7 +327,7 @@ python -c "from modules.utils.db_helper import *; print('Database OK')"
 - **Database Operations**: Optimized queries with proper indexing
 - **GUI Responsiveness**: Background threading for crypto operations
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these guidelines:
 
@@ -389,8 +389,6 @@ This project is designed for educational and research purposes. While it impleme
 - **Python cryptography** library contributors
 - **NIST** for cryptographic standards and guidelines
 - **OWASP** for security best practices
-
-## 🔗 Additional Resources
 
 ### Cryptographic Standards
 - [NIST SP 800-132](https://csrc.nist.gov/publications/detail/sp/800-132/final) - PBKDF2 Recommendations
